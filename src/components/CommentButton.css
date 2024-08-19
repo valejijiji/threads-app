@@ -5,6 +5,7 @@
   width: 100%;
   top: 11.20px;
   left: 9px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .comment-icon {

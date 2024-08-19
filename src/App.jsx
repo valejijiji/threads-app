@@ -7,6 +7,7 @@ import CommentForm from './components/CommentForm';
 import CommentList from './components/CommentList';
 import { useEffect, useState } from "react"
 import Login from "./components/Login"
+import ThreadList from './components/ThreadList';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -41,26 +42,38 @@ function App() {
     setComments(updatedComments);
     localStorage.setItem('comments', JSON.stringify(updatedComments));
   };
+
+  const login = () => {
+    setUser({
+      username: 'usuario1',
+      profilePicture: 'https://bit.ly/ryan-florence'
+    }); 
+  }
+
   return (
       
     <Container maxW={620}>
 
       <Header />
       
+      <div className="app">
+    
+    </div>
+
       <Routes>        
          <Route path='/' element={<UserPage />}  />
          <Route path='/' element={<PostPage />}/>
       </Routes>
       {!user ? (
-        <Login onLogin={handleLogin} />
+        <button onClick={login}>Iniciar Sesión</button>
       ) : (
-        <>
-          <h1>Bienvenido, {user.username}!</h1>
-          <CommentForm onAddComment={handleAddComment} />
-          <CommentList comments={comments} onDeleteComment={handleDeleteComment} />
-        </>)}
+        <div>
+          <h2>Bienvenido, {user.username}</h2>
+          <img src={user.profilePicture} alt={user.username} />
+          <ThreadList user={user} />
+        </div>
+      )}
     </Container>
   )
 }
-
 export default App
