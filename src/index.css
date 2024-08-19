@@ -1,0 +1,13 @@
+.iconoFino{
+    border-radius: 50%;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.iconoFino:hover{
+    background-color: #1e1e1e;
+}
+
+

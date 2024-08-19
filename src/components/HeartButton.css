@@ -1,0 +1,51 @@
+/* src/actions/HeartButton.css */
+.heart-container {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .heart-container:hover{
+    color: rgb(234, 187, 187);
+    background: rgb(227, 227, 227);
+  }
+
+  .heart-container.liked {
+    transform: scale(1.2);
+  }
+  
+  .heart-icon {
+    color: grey;
+    transition: color 0.6s ease;
+  }
+  
+  .heart-container.liked .heart-icon {
+    color: red;
+    animation: pulse 0.5s;
+  }
+  
+  .count {
+    font-size: 16px;
+    margin-left: 8px;
+    color: grey;
+  }
+  
+  .heart-container.liked .count {
+    color: red;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
